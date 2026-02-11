@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueprints code compression</title>
+    <link rel="icon" href="https://i.ibb.co/7JPQyBf9/scriptingeditor1.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>FCT BLUEPRINTS CODE COMPRESSION</h1>
+        </div>
+        <div class="blueprint-book">
+            <div class="blueprint-book-icon"></div>
+            <div class="blueprint-book-content">
+                <div class="blueprint-book-title">Оптимизатор чертежей для Factorio</div>
+                <div class="blueprint-book-desc">Сжимайте чертежи для экономии места и оптимизации руководств Steam</div>
+            </div>
+            <div class="icon-grid">
+                <div class="icon-box">✖</div>
+            </div>
+        </div>
+        <div class="factorio-frame">
+            <div class="factorio-frame-title">КОМПРЕССОР ЧЕРТЕЖЕЙ</div>
+            <div class="blueprint-panel">
+                <div class="blueprint-header">
+                    <div class="blueprint-icon"></div>
+                    <div class="blueprint-title">ОРИГИНАЛЬНЫЙ ЧЕРТЕЖ</div>
+                </div>
+                <div class="blueprint-body">
+                    <textarea id="originalBlueprint" placeholder="Вставьте строку чертежа здесь...">0eNpFjUsKwjAQhq8Ssq5WrArNVvAE7kRKq4MG+6KJIhTBx9KFZ9ATFLUqgnqFyY0c3ZRZ/Mw33/DnPAjnkGYy1l6QJDMu8oooLgZDi0sNERcVrv1Fi4d+ACEd8ISl2ZgtvvGMhTkwfOILH3jBgqwxqFEmUy2T+OceybrjFQtS3gw/Zo0PCqJXmpLWG72XrA8hTDI/Yngxa7Mj42P2grGp1qkStq3rEdi9bj9RWsZU44+0XIAn4zEsuWhYfAGZ+ne2O0235boUjut0nNXqC7lob2Q=</textarea>
+                    <div class="button-container">
+                        <button class="factorio-button green" onclick="compressBlueprint()">СЖАТЬ ЧЕРТЕЖ</button>
+                        <button class="factorio-button red" onclick="clearFields()">ОЧИСТИТЬ</button>
+                    </div>
+                </div>
+            </div>
+            <div class="blueprint-panel">
+                <div class="blueprint-header">
+                    <div class="blueprint-icon"></div>
+                    <div class="blueprint-title">СЖАТЫЙ ЧЕРТЕЖ</div>
+                </div>
+                <div class="blueprint-body">
+                    <textarea id="compressedBlueprint" readonly placeholder="Здесь появится сжатый код чертежа..."></textarea>
+                    <div class="button-container">
+                        <button class="factorio-button yellow" onclick="copyCompressedBlueprint()">СКОПИРОВАТЬ</button>
+                        <button class="factorio-button" onclick="decompressBlueprint()">ПРОВЕРИТЬ</button>
+                    </div>
+                    <div id="status" class="status"></div>
+                    <div id="compressionStats" class="compression-stats"></div>
+                    <div class="tips">
+                        <h3><span class="icon-inserter">🔧</span> Примечания:</h3>
+                        <ul>
+                            <li>Делайте резервную копию переде использванием</li>
+                            <li>Оптимизация работает лучше всего для больших чертежей</li>
+                            <li>Могут быть проблемы совместимости с очень старыми или новеми версиями</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>🐞 <a href="https://www.youtube.com/@FCT-Ostin" target="_blank">YouTube</a></p>
+            <p>💙 <a href="https://t.me/FCTostin" target="_blank">Telegram</a></p>
+            <p>🎮 <a href="https://steamcommunity.com/groups/FCTgroup" target="_blank">Steam Group</a></p>
+            <p>🕹 <a href="https://www.patreon.com/c/OstinFCT" target="_blank">Patreon</a></p>
+            <p>🪐 <a href="https://boosty.to/ostinfct" target="_blank">Boosty</a></p>
+            <p>Создано при поддержке Телеграм сообщества FCTostin</p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
