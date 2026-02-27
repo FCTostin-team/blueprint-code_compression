@@ -10,6 +10,15 @@ function t(key) {
     return dict[key] || window.PROFILE_LOCALES[DEFAULT_LANGUAGE][key] || key;
 }
 
+function updateLanguageToggleLabel() {
+    const toggle = document.getElementById('languageToggle');
+    if (!toggle) {
+        return;
+    }
+
+    toggle.textContent = currentLanguage.toUpperCase();
+}
+
 function applyTranslations() {
     document.documentElement.lang = currentLanguage;
     document.title = t('pageTitle');
@@ -21,6 +30,8 @@ function applyTranslations() {
     document.querySelectorAll('[data-i18n-placeholder]').forEach((node) => {
         node.placeholder = t(node.dataset.i18nPlaceholder);
     });
+
+    updateLanguageToggleLabel();
 
     const savedStats = document.getElementById('compressionStats').dataset.stats;
     if (savedStats) {
@@ -214,6 +225,7 @@ function setupLanguageSelector() {
 
     select.addEventListener('change', (event) => {
         setLanguage(event.target.value);
+        panel.hidden = true;
     });
 
     const savedLanguage = localStorage.getItem('profile-language');
