@@ -36,6 +36,36 @@ body {
     padding: 0 15px;
 }
 
+.language-switcher {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 20;
+}
+
+.language-toggle {
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 8px 10px;
+}
+
+.language-panel {
+    margin-top: 6px;
+    background-color: #222;
+    border: 2px solid #555;
+    padding: 8px;
+}
+
+.language-panel select {
+    width: 180px;
+    background-color: #111;
+    color: var(--factorio-text);
+    border: 2px solid #555;
+    font-family: "Factorio", monospace;
+    font-size: 10px;
+    padding: 6px;
+}
+
 .factorio-frame {
     background-color: var(--factorio-mid);
     border: 3px solid #696969;
@@ -252,7 +282,7 @@ textarea:focus {
 .header h1 {
     font-size: 24px;
     color: var(--factorio-yellow);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
 }
 
@@ -363,4 +393,15 @@ textarea:focus {
 
 .tips li {
     margin-bottom: 3px;
+}
+
+@media (max-width: 900px) {
+    .icon-grid {
+        display: none;
+    }
+
+    .language-switcher {
+        top: 8px;
+        right: 8px;
+    }
 }
