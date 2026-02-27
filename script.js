@@ -12,7 +12,14 @@ function t(key) {
 
 function updateLanguageToggleLabel() {
     const toggle = document.getElementById('languageToggle');
+    const select = document.getElementById('languageSelect');
+
     if (!toggle) {
+        return;
+    }
+
+    if (select && select.selectedOptions && select.selectedOptions.length > 0) {
+        toggle.textContent = select.selectedOptions[0].textContent;
         return;
     }
 
@@ -223,8 +230,14 @@ function setupLanguageSelector() {
         }
     });
 
-    select.addEventListener('change', (event) => {
+    const handleLanguageSelect = (event) => {
         setLanguage(event.target.value);
+        panel.hidden = true;
+    };
+
+    select.addEventListener('change', handleLanguageSelect);
+    select.addEventListener('input', handleLanguageSelect);
+    select.addEventListener('blur', () => {
         panel.hidden = true;
     });
 
