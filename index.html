@@ -8,54 +8,74 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="language-switcher">
+        <button id="languageToggle" class="factorio-button language-toggle" type="button">🌐</button>
+        <div id="languagePanel" class="language-panel" hidden>
+            <select id="languageSelect" aria-label="Language selector">
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+                <option value="uk">Українська</option>
+                <option value="kk">Қазақша</option>
+                <option value="cs">Čeština</option>
+                <option value="nl">Nederlands</option>
+                <option value="sv">Svenska</option>
+                <option value="de">Deutsch</option>
+                <option value="pl">Polski</option>
+                <option value="fr">Français</option>
+                <option value="zh">中文</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
+    </div>
+
     <div class="container">
         <div class="header">
-            <h1>FCT BLUEPRINTS CODE COMPRESSION</h1>
+            <h1 data-i18n="appTitle">FCT BLUEPRINTS CODE COMPRESSION</h1>
         </div>
         <div class="blueprint-book">
             <div class="blueprint-book-icon"></div>
             <div class="blueprint-book-content">
-                <div class="blueprint-book-title">Оптимизатор чертежей для Factorio</div>
-                <div class="blueprint-book-desc">Сжимайте чертежи для экономии места и оптимизации руководств Steam</div>
+                <div class="blueprint-book-title" data-i18n="optimizerTitle">Оптимизатор чертежей для Factorio</div>
+                <div class="blueprint-book-desc" data-i18n="optimizerDesc">Сжимайте чертежи для экономии места и оптимизации руководств Steam</div>
             </div>
             <div class="icon-grid">
                 <div class="icon-box">✖</div>
             </div>
         </div>
         <div class="factorio-frame">
-            <div class="factorio-frame-title">КОМПРЕССОР ЧЕРТЕЖЕЙ</div>
+            <div class="factorio-frame-title" data-i18n="frameTitle">КОМПРЕССОР ЧЕРТЕЖЕЙ</div>
             <div class="blueprint-panel">
                 <div class="blueprint-header">
                     <div class="blueprint-icon"></div>
-                    <div class="blueprint-title">ОРИГИНАЛЬНЫЙ ЧЕРТЕЖ</div>
+                    <div class="blueprint-title" data-i18n="originalTitle">ОРИГИНАЛЬНЫЙ ЧЕРТЕЖ</div>
                 </div>
                 <div class="blueprint-body">
-                    <textarea id="originalBlueprint" placeholder="Вставьте строку чертежа здесь...">0eNpFjUsKwjAQhq8Ssq5WrArNVvAE7kRKq4MG+6KJIhTBx9KFZ9ATFLUqgnqFyY0c3ZRZ/Mw33/DnPAjnkGYy1l6QJDMu8oooLgZDi0sNERcVrv1Fi4d+ACEd8ISl2ZgtvvGMhTkwfOILH3jBgqwxqFEmUy2T+OceybrjFQtS3gw/Zo0PCqJXmpLWG72XrA8hTDI/Yngxa7Mj42P2grGp1qkStq3rEdi9bj9RWsZU44+0XIAn4zEsuWhYfAGZ+ne2O0235boUjut0nNXqC7lob2Q=</textarea>
+                    <textarea id="originalBlueprint" data-i18n-placeholder="originalPlaceholder" placeholder="Вставьте строку чертежа здесь...">0eNpFjUsKwjAQhq8Ssq5WrArNVvAE7kRKq4MG+6KJIhTBx9KFZ9ATFLUqgnqFyY0c3ZRZ/Mw33/DnPAjnkGYy1l6QJDMu8oooLgZDi0sNERcVrv1Fi4d+ACEd8ISl2ZgtvvGMhTkwfOILH3jBgqwxqFEmUy2T+OceybrjFQtS3gw/Zo0PCqJXmpLWG72XrA8hTDI/Yngxa7Mj42P2grGp1qkStq3rEdi9bj9RWsZU44+0XIAn4zEsuWhYfAGZ+ne2O0235boUjut0nNXqC7lob2Q=</textarea>
                     <div class="button-container">
-                        <button class="factorio-button green" onclick="compressBlueprint()">СЖАТЬ ЧЕРТЕЖ</button>
-                        <button class="factorio-button red" onclick="clearFields()">ОЧИСТИТЬ</button>
+                        <button id="compressButton" class="factorio-button green" type="button" data-i18n="compressButton">СЖАТЬ ЧЕРТЕЖ</button>
+                        <button id="clearButton" class="factorio-button red" type="button" data-i18n="clearButton">ОЧИСТИТЬ</button>
                     </div>
                 </div>
             </div>
             <div class="blueprint-panel">
                 <div class="blueprint-header">
                     <div class="blueprint-icon"></div>
-                    <div class="blueprint-title">СЖАТЫЙ ЧЕРТЕЖ</div>
+                    <div class="blueprint-title" data-i18n="compressedTitle">СЖАТЫЙ ЧЕРТЕЖ</div>
                 </div>
                 <div class="blueprint-body">
-                    <textarea id="compressedBlueprint" readonly placeholder="Здесь появится сжатый код чертежа..."></textarea>
+                    <textarea id="compressedBlueprint" readonly data-i18n-placeholder="compressedPlaceholder" placeholder="Здесь появится сжатый код чертежа..."></textarea>
                     <div class="button-container">
-                        <button class="factorio-button yellow" onclick="copyCompressedBlueprint()">СКОПИРОВАТЬ</button>
-                        <button class="factorio-button" onclick="decompressBlueprint()">ПРОВЕРИТЬ</button>
+                        <button id="copyButton" class="factorio-button yellow" type="button" data-i18n="copyButton">СКОПИРОВАТЬ</button>
+                        <button id="verifyButton" class="factorio-button" type="button" data-i18n="verifyButton">ПРОВЕРИТЬ</button>
                     </div>
                     <div id="status" class="status"></div>
                     <div id="compressionStats" class="compression-stats"></div>
                     <div class="tips">
-                        <h3><span class="icon-inserter">🔧</span> Примечания:</h3>
+                        <h3><span class="icon-inserter">🔧</span> <span data-i18n="tipsTitle">Примечания:</span></h3>
                         <ul>
-                            <li>Делайте резервную копию переде использванием</li>
-                            <li>Оптимизация работает лучше всего для больших чертежей</li>
-                            <li>Могут быть проблемы совместимости с очень старыми или новеми версиями</li>
+                            <li data-i18n="tip1">Делайте резервную копию переде использванием</li>
+                            <li data-i18n="tip2">Оптимизация работает лучше всего для больших чертежей</li>
+                            <li data-i18n="tip3">Могут быть проблемы совместимости с очень старыми или новеми версиями</li>
                         </ul>
                     </div>
                 </div>
@@ -67,10 +87,22 @@
             <p>🎮 <a href="https://steamcommunity.com/groups/FCTgroup" target="_blank">Steam Group</a></p>
             <p>🕹 <a href="https://www.patreon.com/c/OstinFCT" target="_blank">Patreon</a></p>
             <p>🪐 <a href="https://boosty.to/ostinfct" target="_blank">Boosty</a></p>
-            <p>Создано при поддержке Телеграм сообщества FCTostin</p>
+            <p data-i18n="createdWith">Создано при поддержке Телеграм сообщества FCTostin</p>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+    <script src="profiles/ru.js"></script>
+    <script src="profiles/en.js"></script>
+    <script src="profiles/uk.js"></script>
+    <script src="profiles/kk.js"></script>
+    <script src="profiles/cs.js"></script>
+    <script src="profiles/nl.js"></script>
+    <script src="profiles/sv.js"></script>
+    <script src="profiles/de.js"></script>
+    <script src="profiles/pl.js"></script>
+    <script src="profiles/fr.js"></script>
+    <script src="profiles/zh.js"></script>
+    <script src="profiles/ja.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
