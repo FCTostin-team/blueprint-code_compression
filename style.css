@@ -63,6 +63,11 @@ body {
     display: none;
 }
 
+.language-select:hover,
+.language-select:active {
+    background-color: var(--factorio-mid);
+}
+
 .factorio-frame {
     background-color: var(--factorio-mid);
     border: 3px solid #696969;
