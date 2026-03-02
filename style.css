@@ -49,11 +49,18 @@ body {
     min-width: 180px;
     text-align: center;
     text-align-last: center;
-    appearance: auto;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: none;
 }
 
 .language-select option {
     text-align: center;
+}
+
+.language-select::-ms-expand {
+    display: none;
 }
 
 .factorio-frame {
