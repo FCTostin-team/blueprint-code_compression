@@ -10,22 +10,6 @@ function t(key) {
     return dict[key] || window.PROFILE_LOCALES[DEFAULT_LANGUAGE][key] || key;
 }
 
-function updateLanguageToggleLabel() {
-    const toggle = document.getElementById('languageToggle');
-    const select = document.getElementById('languageSelect');
-
-    if (!toggle) {
-        return;
-    }
-
-    if (select && select.selectedOptions && select.selectedOptions.length > 0) {
-        toggle.textContent = select.selectedOptions[0].textContent;
-        return;
-    }
-
-    toggle.textContent = currentLanguage.toUpperCase();
-}
-
 function applyTranslations() {
     document.documentElement.lang = currentLanguage;
     document.title = t('pageTitle');
@@ -38,7 +22,6 @@ function applyTranslations() {
         node.placeholder = t(node.dataset.i18nPlaceholder);
     });
 
-    updateLanguageToggleLabel();
 
     const savedStats = document.getElementById('compressionStats').dataset.stats;
     if (savedStats) {
@@ -216,30 +199,7 @@ function clearFields() {
 }
 
 function setupLanguageSelector() {
-    const toggle = document.getElementById('languageToggle');
-    const panel = document.getElementById('languagePanel');
     const select = document.getElementById('languageSelect');
-
-    toggle.addEventListener('click', () => {
-        panel.hidden = !panel.hidden;
-    });
-
-    document.addEventListener('click', (event) => {
-        if (!event.target.closest('.language-switcher')) {
-            panel.hidden = true;
-        }
-    });
-
-    const handleLanguageSelect = (event) => {
-        setLanguage(event.target.value);
-        panel.hidden = true;
-    };
-
-    select.addEventListener('change', handleLanguageSelect);
-    select.addEventListener('input', handleLanguageSelect);
-    select.addEventListener('blur', () => {
-        panel.hidden = true;
-    });
 
     const savedLanguage = localStorage.getItem('profile-language');
     if (savedLanguage && window.PROFILE_LOCALES[savedLanguage]) {
@@ -248,6 +208,10 @@ function setupLanguageSelector() {
 
     select.value = currentLanguage;
     applyTranslations();
+
+    select.addEventListener('change', (event) => {
+        setLanguage(event.target.value);
+    });
 }
 
 function setupActions() {
