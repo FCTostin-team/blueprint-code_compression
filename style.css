@@ -371,46 +371,10 @@ textarea:focus {
     text-decoration: underline;
 }
 
-.social-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 8px;
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-}
-
-.social-icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
-    filter: brightness(0.8);
-}
-
 .icon-inserter {
     font-size: 14px;
     color: var(--factorio-yellow);
     margin-right: 5px;
-}
-
-.factorio-tab {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #333;
-    border: 2px solid #555;
-    border-bottom: none;
-    margin-right: 2px;
-    position: relative;
-    top: 2px;
-    cursor: pointer;
-    font-size: 10px;
-}
-
-.factorio-tab.active {
-    background-color: var(--factorio-darker);
-    border-bottom: 2px solid var(--factorio-darker);
 }
 
 .tips {
@@ -449,7 +413,7 @@ textarea:focus {
   z-index: 20;
   width: 170px;
 }
-.factorio-button language-select {
+.factorio-button.language-select {
   appearance: none;
   border: 2px solid #696969;
   border-radius: 0;
@@ -464,7 +428,7 @@ textarea:focus {
   box-shadow: 0 0 8px #0006;
   transition: border 0.18s;
 }
-.factorio-button language-select:focus {
+.factorio-button.language-select:focus {
   border-color: var(--factorio-blue);
   outline: none;
 }
@@ -472,9 +436,6 @@ textarea:focus {
 @media (max-width: 900px) {
   .container { max-width: 99vw; }
   .factorio-frame { padding: 12px 3vw 16px 3vw; }
-  .factorio-textarea, .result-box { width: 98vw; min-width: 0; max-width: 100vw; }
   .language-switcher { top: 54px; right: 14px; width: 170px; }
 }
-compression-link
-
 
