@@ -1,12 +1,14 @@
-# FCT Blueprint Compressor
+# FCT Blueprint Compressor <a href="https://github.com/OstinUA"><img align="right" src="https://img.shields.io/badge/OstinUA-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 
-> Ultra-lean Factorio blueprint string optimizer for shipping cleaner, shorter blueprint payloads.
+![Factorio: 2.0+](https://img.shields.io/badge/Factorio-2.0%2B%20%2F%20Space%20Age-orange?style=for-the-badge)
 
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge)](LICENSE)
+![Platform: Web](https://img.shields.io/badge/Platform-Web_App-0ea5e9?style=for-the-badge)
 [![Frontend: Vanilla JS](https://img.shields.io/badge/Frontend-Vanilla%20JS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111)](script.js)
 [![Styles: CSS3](https://img.shields.io/badge/Styles-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](style.css)
 [![Markup: HTML5](https://img.shields.io/badge/Markup-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](index.html)
-[![Factorio Blueprint Tool](https://img.shields.io/badge/Factorio-Blueprint%20Tool-orange?style=for-the-badge)](README.md)
+![Status: Active](https://img.shields.io/badge/Status-Active-22c55e?style=for-the-badge)
+![Coverage: Manual](https://img.shields.io/badge/Coverage-Manual%20Validation-lightgrey?style=for-the-badge)
+[![i18n](https://img.shields.io/badge/i18n-multi--language-2ea44f?style=for-the-badge)](#features)
 
 ## Table of Contents
 
@@ -226,8 +228,6 @@ Project created with the support of the FCTostin community.
 
 ## Contacts
 
-- YouTube: <https://www.youtube.com/@FCT-Ostin>
-- Telegram: <https://t.me/FCTostin>
-- Steam Group: <https://steamcommunity.com/groups/FCTgroup>
-- Patreon: <https://www.patreon.com/c/OstinFCT>
-- Boosty: <https://boosty.to/ostinfct>
+- GitHub: [OstinUA](https://github.com/OstinUA)
+- Team page: [FCTostin-team](https://github.com/FCTostin-team)
+- Contribution process: see [`CONTRIBUTING.md`](CONTRIBUTING.md).
